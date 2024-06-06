@@ -1,0 +1,39 @@
+*{  
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #BDCDD6;
+    overflow-y: auto;
+}
+
+body{
+    padding: 0px;
+}
+
+nav{
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    border-radius: 10px;
+    background-color: #EEE9DA80;
+    border: 5px solid;
+}
+nav .menu{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+nav .menu img{
+    width: 50px;
+    max-width: 50px;
+    min-width: 50px;
+}
+
+header{
+    padding: 200px;
+}
+
+h1{
+    font-size: 50px;
+}
