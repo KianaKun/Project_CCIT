@@ -10,8 +10,7 @@ How To Install Framework
 =========
 on vscode terminal, using command
 
-npm install ejs express nodemon
-
+npm install ejs express nodemon mysql
 
 How To Run NodeJs
 =========

@@ -1,0 +1,108 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    background-image: url('/images/image-header/jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+header, footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px);
+    padding: 30px;
+}
+
+.appointmentForm {
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.appointmentForm .form{
+    display: flex;
+    gap: 5px;
+}
+
+.appointmentForm form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.appointmentForm label {
+    margin-bottom: 0.5em;
+}
+
+.appointmentForm input[type="text"],
+.appointmentForm input[type="tel"],
+.appointmentForm input[type="email"],
+.appointmentForm textarea,
+.appointmentForm select,
+.appointmentForm input[type="datetime-local"] {
+    padding: 0.5em;
+    margin-bottom: 1em;
+    width: 100%;
+    max-width: 300px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 5px;
+}
+
+.appointmentForm input[type="submit"] {
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+}
+
+.appointmentForm input[type="submit"]:hover {
+    background-color: #2c7e4c;
+}
+
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width:768px) {
+    .appointmentForm {
+        padding: 1.5em;
+    }
+}
+
+@media screen and (max-width:420px) {
+    .appointmentForm {
+        padding: 1em;
+    }
+}
