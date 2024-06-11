@@ -41,7 +41,7 @@ main {
 
 .appointmentForm .form .form-name,
 .form-gender, .form-telephone, .form-birthdate,
-.form-address, .form-email, .form-complain, .form-meeting, .form-submit {
+.form-address, .form-email, .form-complain, .form-meeting, .form-submit, .form-doctor {
     display: flex;
     flex-direction: column;
     gap: 10px;

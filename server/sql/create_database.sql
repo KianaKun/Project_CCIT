@@ -16,6 +16,6 @@ CREATE TABLE IF NOT EXISTS form (
 );
 
 CREATE TABLE IF NOT EXISTS admin(
-    id VARCHAR PRIMARY,
-    passwords password
+    id VARCHAR(100) PRIMARY KEY,
+    passwords VARCHAR(100)
 );

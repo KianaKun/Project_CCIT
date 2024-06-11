@@ -22,9 +22,9 @@ app.get('/appointment', (req, res) => {
 });
 
 app.post('/appointment/submit', (req, res) => {
-    const { name, gender, phone, birthdate, address, email, complain, meetingDate } = req.body;
-    const query = 'INSERT INTO form (name, gender, phone, birthdate, address, email, complain, meetingDate) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
-    connection.query(query, [name, gender, phone, birthdate, address, email, complain, meetingDate], (err, result) => {
+    const { name, gender, phone, birthdate, address, email, complain, meetingDate, doctor } = req.body;
+    const query = 'INSERT INTO form (name, gender, phone, birthdate, address, email, complain, meetingDate, doctor) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
+    connection.query(query, [name, gender, phone, birthdate, address, email, complain, meetingDate, doctor], (err, result) => {
         if (err) {
             console.error(`Error Mengisi Data: ${err}`);
             return res.status(500).send('Internal Server Error');
