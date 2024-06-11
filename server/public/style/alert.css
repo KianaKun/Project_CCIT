@@ -1,0 +1,25 @@
+body{
+    padding: 100px;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 300px;
+    margin-top: 200px;
+}
+
+main .card{
+    border: 1px solid;
+    padding: 100px;
+    border-radius: 5px;
+}
+
+a{
+    text-decoration: none;
+}
+a:visited{
+    color: inherit;
+}
+
