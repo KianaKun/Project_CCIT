@@ -25,56 +25,82 @@ main {
 }
 
 .appointmentForm {
-    padding: 2em;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
+    max-width: 800px; /* Lebar maksimum yang diperbesar */
+    margin: 0 auto;
+    padding: 130px; /* Penyesuaian padding */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.appointmentForm h1 {
     text-align: center;
-    animation: fadeIn 0.5s ease-in-out;
+    margin-bottom: 20px;
+    color: #333;
 }
 
-.appointmentForm .form{
-    display: flex;
-    gap: 5px;
-}
-
-.appointmentForm form {
+.appointmentForm .form .form-name,
+.form-gender, .form-telephone, .form-birthdate,
+.form-address, .form-email, .form-complain, .form-meeting, .form-submit {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 10px;
+    padding: 10px;
 }
 
 .appointmentForm label {
-    margin-bottom: 0.5em;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #555;
 }
 
 .appointmentForm input[type="text"],
 .appointmentForm input[type="tel"],
+.appointmentForm input[type="date"],
 .appointmentForm input[type="email"],
-.appointmentForm textarea,
+.appointmentForm input[type="datetime-local"],
 .appointmentForm select,
-.appointmentForm input[type="datetime-local"] {
-    padding: 0.5em;
-    margin-bottom: 1em;
-    width: 100%;
-    max-width: 300px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: none;
-    border-radius: 5px;
+.appointmentForm textarea {
+    padding: 15px; /* Mengubah padding */
+    border: 1px solid #ccc;
+    border-radius: 6px; /* Menyesuaikan border-radius */
+    font-size: 18px; /* Mengubah font-size */
+    outline: none;
+    transition: border-color 0.3s;
 }
 
 .appointmentForm input[type="submit"] {
-    background-color: #2e8b57;
-    color: white;
+    padding: 20px 30px; /* Menyesuaikan padding */
+    font-size: 18px; /* Mengubah font-size */
+}
+
+.appointmentForm input[type="text"]:focus,
+.appointmentForm input[type="tel"]:focus,
+.appointmentForm input[type="date"]:focus,
+.appointmentForm input[type="email"]:focus,
+.appointmentForm input[type="datetime-local"]:focus,
+.appointmentForm select:focus,
+.appointmentForm textarea:focus {
+    border-color: #007bff;
+}
+
+.appointmentForm textarea {
+    resize: none; /* Disable resizing */
+}
+
+.appointmentForm input[type="submit"] {
+    padding: 15px;
+    background-color: #007bff;
+    color: #fff;
     border: none;
+    border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
-    padding: 0.5em 1em;
-    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 .appointmentForm input[type="submit"]:hover {
-    background-color: #2c7e4c;
+    background-color: #0056b3;
 }
 
 footer {

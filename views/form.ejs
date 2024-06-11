@@ -16,43 +16,43 @@
     </header>
     <main>
         <section class="appointmentForm">
-            <form action="#" method="post" class="form">
-                <section class="">
+            <form action="/submit" method="post" class="form">
+                <section class="form-name">
                     <label for="name">Nama:</label>
                     <input type="text" id="name" name="name" required>
                 </section>
-                <section class="">
+                <section class="form-gender">
                     <label for="gender">Jenis Kelamin:</label>
                     <select id="gender" name="gender" required>
                         <option value="laki-laki">Laki-laki</option>
                         <option value="perempuan">Perempuan</option>
                     </select>    
                 </section>
-                <section class="">
+                <section class="form-telephone">
                     <label for="phone">Nomor Telepon:</label>
                     <input type="tel" id="phone" name="phone" required>    
                 </section>
-                <section class="">
+                <section class="form-birthdate">
                     <label for="birthdate">Tanggal Lahir:</label>
                     <input type="date" id="birthdate" name="birthdate" required>        
                 </section>
-                <section class="">
+                <section class="form-address">
                     <label for="address">Alamat:</label>
                     <textarea id="address" name="address" rows="4" required></textarea>
                 </section>
-                <section class="">
+                <section class="form-email">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
                 </section>
-                <section class="">
-                    <label for="complaint">Keluhan:</label>
-                    <textarea id="complaint" name="complaint" rows="4" required></textarea>
+                <section class="form-complain">
+                    <label for="complain">Keluhan:</label>
+                    <textarea id="complain" name="complain" rows="4" required></textarea>
                 </section>
-                <section class="">
+                <section class="form-meeting">
                     <label for="meetingDate">Tanggal Pertemuan:</label>
                     <input type="datetime-local" id="meetingDate" name="meetingDate" required>
                 </section>
-                <section class="">
+                <section class="form-submit">
                     <input type="submit" value="Kirim">
                 </section>
             </form>
