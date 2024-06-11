@@ -14,3 +14,8 @@ CREATE TABLE IF NOT EXISTS form (
     meetingDate DATETIME,
     nama_dokter VARCHAR(100)
 );
+
+CREATE TABLE IF NOT EXISTS admin(
+    id VARCHAR PRIMARY,
+    passwords password
+);
