@@ -7,6 +7,9 @@ body {
     background-image: url('/images/image-header.jpg');
     background-size: cover;
     background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header, footer {
