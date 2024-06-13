@@ -15,8 +15,10 @@ CREATE TABLE IF NOT EXISTS form (
     nama_dokter VARCHAR(100)
 );
 
-CREATE TABLE IF NOT EXISTS admin(
+CREATE TABLE IF NOT EXISTS admins(
     id VARCHAR(100) PRIMARY KEY,
     passwords VARCHAR(100),
     statusLogin BOOLEAN
 );
+
+INSERT INTO admins (id, passwords, statusLogin) VALUES ('admin', 'admin', true);
