@@ -5,10 +5,6 @@ body {
     box-sizing: border-box;
 }
 
-nav{
-    
-}
-
 .header {
     background-color: #2e8b57;
     color: white;
@@ -20,55 +16,45 @@ nav{
     background: url('/images/image-header.jpg') no-repeat center center/cover;
     color: white;
     padding: 180px;
+}
 
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 2em;
 }
 
 .tag-line {
     background-color: rgba(0, 0, 0, 0.7);
-    display: inline-block;
     padding: 2em;
     color: #fff;
     border-radius: 10px;
-    max-width: 600px;
-    margin: auto;
-}
-
-.cards {
-    display: flex;
-    justify-content: space-around;
-    padding: 2em;
-    background-color: #f4f4f4;
-}
-
-.card {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1em;
-    margin: 1em;
-    width: 30%;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.card h2 {
-    color: #2e8b57;
+    max-width: 70%;
+    flex: 1;
+    margin-right: 2em;
 }
 
 .menu {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+    background-color: rgba(255, 255, 255, 0.6);
     padding: 1em;
-    background-color: #fff;
+    border-radius: 10px;
+    margin-left: 2em;
+    flex-shrink: 0;
+    align-items: flex-start;
 }
 
 .menu a {
-    margin: 0 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: black;
     transition: transform 0.3s;
 }
 
@@ -79,6 +65,7 @@ nav{
 .menu img {
     width: 50px;
     height: 50px;
+    margin-bottom: 0.5em;
 }
 
 .contact-info, .social-media {
@@ -121,7 +108,27 @@ nav{
     animation-delay: 0.5s;
 }
 
-@media screen and (max-width:768px) {
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1em;
+    margin: 1em;
+    width: 30%;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    color: #2e8b57;
+}
+
+@media screen and (max-width: 768px) {
     .header {
         padding: 0.5em 0;
     }
@@ -130,7 +137,8 @@ nav{
     }
     .tag-line {
         padding: 1.5em;
-        max-width: 80%;
+        max-width: 100%;
+        margin-right: 0;
     }
     .card {
         width: 90%;
@@ -138,6 +146,19 @@ nav{
     }
     .cards {
         flex-direction: column;
+        align-items: center;
+    }
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu {
+        flex-direction: row;
+        gap: 1em;
+        padding: 1em;
+        justify-content: center;
+        margin-left: 0;
+        width: auto;
         align-items: center;
     }
     .menu img {
@@ -150,13 +171,14 @@ nav{
     }
 }
 
-@media screen and (max-width:420px) {
+@media screen and (max-width: 480px) {
     .background-image {
         padding: 2em 1em;
     }
     .tag-line {
         padding: 1em;
-        max-width: 90%;
+        max-width: 100%;
+        margin-right: 0;
     }
     .cards {
         flex-direction: column;
@@ -165,6 +187,22 @@ nav{
     .card {
         width: 90%;
         margin: 1em auto;
+    }
+    .header-container {
+        padding: 1em;
+    }
+    .menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1em;
+        padding: 0.5em;
+        justify-content: center;
+        margin-left: 0;
+        width: auto;
+        align-items: center;
+    }
+    .menu a {
+        margin: 0.5em;
     }
     .menu img {
         width: 30px;
