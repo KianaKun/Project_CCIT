@@ -17,5 +17,6 @@ CREATE TABLE IF NOT EXISTS form (
 
 CREATE TABLE IF NOT EXISTS admin(
     id VARCHAR(100) PRIMARY KEY,
-    passwords VARCHAR(100)
+    passwords VARCHAR(100),
+    statusLogin BOOLEAN
 );
