@@ -58,7 +58,7 @@
                     <tbody>
                         <% data.forEach(form => { %>
                             <tr>
-                                <td><%= form.idForm %></td>
+                                <td><%= form.idform %></td>
                                 <td><%= form.name %></td>
                                 <td><%= form.gender %></td>
                                 <td><%= form.phone %></td>
@@ -69,8 +69,8 @@
                                 <td><%= form.meetingDate %></td>
                                 <td><%= form.nama_dokter %></td>
                                 <td class="actions">
-                                    <a href="/dashboard/update/<%= form.idForm %>" class="update-button">Update</a>
-                                    <form action="/dashboard/delete/<%= form.idForm %>" method="post" style="display:inline;">
+                                    <a href="/dashboard/update/<%= form.idform %>" class="update-button">Update</a>
+                                    <form action="/dashboard/delete/<%= form.idform %>" method="post" style="display:inline;">
                                         <button type="submit" class="delete-button">Delete</button>
                                     </form>
                                 </td>

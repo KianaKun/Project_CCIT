@@ -31,15 +31,14 @@ router.get('/', (req, res) => {
 });
 
 // Route untuk menghapus data berdasarkan ID
-router.post('/delete/:idForm', (req, res) => {
-    const { idForm } = req.params;
-    const query = 'DELETE FROM form WHERE idForm = ?';
-    connection.query(query, [idForm], (err, result) => {
+router.post('/delete/:idform', (req, res) => {
+    const { idform } = req.params;
+    const query = 'DELETE FROM form WHERE idform = ?';
+    connection.query(query, [idform], (err, result) => {
         if (err) {
             console.error(`Error executing query: ${err}`);
             return res.redirect('/dashboard?error=Database error');
         }
-        // Pastikan ada record yang terhapus
         if (result.affectedRows === 0) {
             return res.redirect('/dashboard?error=No record found');
         }
@@ -48,10 +47,10 @@ router.post('/delete/:idForm', (req, res) => {
 });
 
 // Route untuk menampilkan halaman update data berdasarkan ID
-router.get('/update/:idForm', (req, res) => {
-    const { idForm } = req.params;
-    const query = 'SELECT * FROM form WHERE idForm = ?';
-    connection.query(query, [idForm], (err, results) => {
+router.get('/update/:idform', (req, res) => {
+    const { idform } = req.params;
+    const query = 'SELECT * FROM form WHERE idform = ?';
+    connection.query(query, [idform], (err, results) => {
         if (err) {
             console.error(`Error executing query: ${err}`);
             return res.redirect('/dashboard?error=Database error');
@@ -59,29 +58,27 @@ router.get('/update/:idForm', (req, res) => {
         if (results.length === 0) {
             return res.redirect('/dashboard?error=No record found');
         }
-        res.render('update', { form: results[0] });
+        res.render('update', { form: results[0], error: null });
     });
 });
 
 // Route untuk memproses update data berdasarkan ID
-router.post('/update/:idForm', (req, res) => {
-    const { idForm } = req.params;
+router.post('/update/:idform', (req, res) => {
+    const { idform } = req.params;
     const { name, gender, phone, birthdate, address, email, complain, meetingDate, nama_dokter } = req.body;
     const query = `
         UPDATE form 
         SET name = ?, gender = ?, phone = ?, birthdate = ?, address = ?, email = ?, complain = ?, meetingDate = ?, nama_dokter = ? 
-        WHERE idForm = ?
+        WHERE idform = ?
     `;
-    const values = [name, gender, phone, birthdate, address, email, complain, meetingDate, nama_dokter, idForm];
-
+    const values = [name, gender, phone, birthdate, address, email, complain, meetingDate, nama_dokter, idform];
     connection.query(query, values, (err, result) => {
         if (err) {
             console.error(`Error executing query: ${err}`);
-            return res.redirect(`/dashboard/update/${idForm}?error=Database error`);
+            return res.redirect(`/dashboard/update/${idform}?error=Database error`);
         }
-        // Pastikan ada record yang diupdate
         if (result.affectedRows === 0) {
-            return res.redirect(`/dashboard/update/${idForm}?error=No record found`);
+            return res.redirect(`/dashboard/update/${idform}?error=No record found`);
         }
         res.redirect('/dashboard');
     });
