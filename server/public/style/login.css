@@ -29,7 +29,7 @@ main {
 }
 
 .loginForm {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.5);
     padding: 2em;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -54,7 +54,24 @@ main {
 }
 
 .loginForm input[type="text"],
-.loginForm input[type="password"],
+.loginForm input[type="password"] {
+    padding: 0.5em;
+    margin-bottom: 1em;
+    width: 100%;
+    max-width: 300px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    border-radius: 4px;
+    transition: border-color 0.3s, bakcground-color 0.3s;
+}
+
+.loginForm input[type="text"]:focus,
+.loginForm input[type="password"]:focus {
+    outline: none;
+    border-color: rgba(0, 123, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
 .loginForm input[type="submit"] {
     padding: 0.5em;
     margin-bottom: 1em;
