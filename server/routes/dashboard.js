@@ -7,6 +7,7 @@ const excel = require('exceljs');
 router.get('/', (req, res) => {
     let query = 'SELECT * FROM form';
     const { meetingDate, name } = req.query;
+    res.setHeader('Cache-Control', 'no-store');
 
     if (meetingDate || name) {
         query += ' WHERE';
