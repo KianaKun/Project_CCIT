@@ -92,7 +92,7 @@ table {
 table th, table td {
     border: 1px solid #ddd;
     padding: 0.75rem;
-    text-align: left;
+    text-align: center;
     vertical-align: middle; /* Ensure vertical alignment */
 }
 
@@ -147,6 +147,7 @@ table tr:hover {
     flex-direction: column;
     gap: 5px; /* Adjust the gap as needed */
     justify-content: center;
+    padding: 35px;
 }
 
 @media (max-width: 768px) {
