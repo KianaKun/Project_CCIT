@@ -146,7 +146,7 @@ router.get('/export', (req, res) => {
         );
         res.setHeader(
             'Content-Disposition',
-            'attachment; filename="forms.xlsx"'
+            'attachment; filename="Data Pasien Hari Ini.xlsx"'
         );
 
         workbook.xlsx.write(res)
