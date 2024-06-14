@@ -1,11 +1,10 @@
-<!-- dashboard.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="style/dashboard.css">
+    <link rel="stylesheet" href="/style/dashboard.css">
 </head>
 <body>
     <header>
@@ -27,39 +26,58 @@
                 <input type="date" id="meetingDate" name="meetingDate" value="<%= meetingDate %>">
                 <input type="submit" value="Filter" class="filter-button">
             </form>
+            <form action="/dashboard" method="get" class="search-form">
+                <label for="name">Mencari nama:</label>
+                <input type="text" name="name" id="name" placeholder="Tulis Namamu">
+                <input type="submit" value="Search">
+            </form>
+            <form action="/dashboard/export" method="get" class="export-form">
+                <input type="hidden" name="meetingDate" value="<%= meetingDate %>">
+                <input type="hidden" name="name" value="<%= name %>">
+                <input type="submit" value="Export to Excel" class="export-button">
+            </form>
 
             <!-- Tabel untuk menampilkan data form -->
             <div class="table-respon">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nama</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Telepon</th>
-                        <th>Tanggal Lahir</th>
-                        <th>Alamat</th>
-                        <th>Email</th>
-                        <th>Keluhan</th>
-                        <th>Tanggal Pertemuan</th>
-                        <th>Nama Dokter</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% data.forEach(form => { %>
+                <table>
+                    <thead>
                         <tr>
-                            <td><%= form.name %></td>
-                            <td><%= form.gender %></td>
-                            <td><%= form.phone %></td>
-                            <td><%= form.birthdate %></td>
-                            <td><%= form.address %></td>
-                            <td><%= form.email %></td>
-                            <td><%= form.complain %></td>
-                            <td><%= form.meetingDate %></td>
-                            <td><%= form.nama_dokter %></td>
+                            <th>ID</th>
+                            <th>Nama</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Telepon</th>
+                            <th>Tanggal Lahir</th>
+                            <th>Alamat</th>
+                            <th>Email</th>
+                            <th>Keluhan</th>
+                            <th>Tanggal Pertemuan</th>
+                            <th>Nama Dokter</th>
+                            <th>Action</th>
                         </tr>
-                    <% }); %>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        <% data.forEach(form => { %>
+                            <tr>
+                                <td><%= form.idForm %></td>
+                                <td><%= form.name %></td>
+                                <td><%= form.gender %></td>
+                                <td><%= form.phone %></td>
+                                <td><%= form.birthdate %></td>
+                                <td><%= form.address %></td>
+                                <td><%= form.email %></td>
+                                <td><%= form.complain %></td>
+                                <td><%= form.meetingDate %></td>
+                                <td><%= form.nama_dokter %></td>
+                                <td>
+                                    <a href="/dashboard/update/<%= form.idForm %>" class="update-button">Update</a>
+                                    <form action="/dashboard/delete/<%= form.idForm %>" method="post" style="display:inline;">
+                                        <button type="submit" class="delete-button">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>

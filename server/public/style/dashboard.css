@@ -107,6 +107,39 @@ table tr:hover {
     background-color: #ddd;
 }
 
+.update-button,
+.delete-button {
+    background-color: #ffc107;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none; /* Menghilangkan garis bawah */
+    display: inline-block; /* Menyesuaikan tombol agar terlihat sesuai bentuk */
+}
+
+.update-button:hover,
+.delete-button:hover {
+    background-color: #e0a800;
+}
+
+.update-button {
+    background-color: #ffc107;
+}
+
+.delete-button {
+    background-color: #ff4b5c;
+}
+
+.update-button:hover {
+    background-color: #e0a800;
+}
+
+.delete-button:hover {
+    background-color: #ff1a33;
+}
+
 @media (max-width: 768px) {
     .header-container {
         flex-direction: row;

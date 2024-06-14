@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Form</title>
+    <link rel="stylesheet" href="/styles/dashboard.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h2 class="dashboard-title">Update Form</h2>
+            <a href="/dashboard" class="back-button">Back to Dashboard</a>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h3>Update Form Data</h3>
+
+            <form action="/dashboard/update/<%= form.idForm %>" method="post">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" value="<%= form.name %>">
+
+                <label for="gender">Jenis Kelamin:</label>
+                <select id="gender" name="gender">
+                    <option value="Laki-laki" <% if (form.gender === 'Laki-laki') { %>selected<% } %>>Laki-laki</option>
+                    <option value="Perempuan" <% if (form.gender === 'Perempuan') { %>selected<% } %>>Perempuan</option>
+                </select>
+
+                <label for="phone">Telepon:</label>
+                <input type="text" id="phone" name="phone" value="<%= form.phone %>">
+
+                <label for="birthdate">Tanggal Lahir:</label>
+                <input type="date" id="birthdate" name="birthdate" value="<%= form.birthdate %>">
+
+                <label for="address">Alamat:</label>
+                <input type="text" id="address" name="address" value="<%= form.address %>">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="<%= form.email %>">
+
+                <label for="complain">Keluhan:</label>
+                <textarea id="complain" name="complain"><%= form.complain %></textarea>
+
+                <label for="meetingDate">Tanggal Pertemuan:</label>
+                <input type="date" id="meetingDate" name="meetingDate" value="<%= form.meetingDate %>">
+
+                <label for="nama_dokter">Nama Dokter:</label>
+                <input type="text" id="nama_dokter" name="nama_dokter" value="<%= form.nama_dokter %>">
+
+                <input type="submit" value="Update" class="update-button">
+            </form>
+
+            <% if (error) { %>
+                <p class="error-message"><%= error %></p>
+            <% } %>
+        </section>
+    </main>
+</body>
+</html>
