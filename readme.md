@@ -18,7 +18,7 @@ How To Install Framework
 =========
 on vscode terminal, using command
 
-npm install ejs express nodemon mysql2 body-parser 
+npm install ejs express nodemon mysql2 body-parser exceljs
 
 How To Run NodeJs
 =========
