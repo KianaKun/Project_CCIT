@@ -1,26 +1,75 @@
-body{
-    padding: 100px;
-}
-
-main{
+body {
+    margin: 0;
+    padding: 0;
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 300px;
-    margin-top: 200px;
+    align-items: center;
+    height: 100vh;
+    background-image: url('/images/pharmacy.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: Arial, sans-serif;
 }
 
-main .card{
-    border: 1px solid;
-    padding: 100px;
-    border-radius: 5px;
+main {
+    text-align: center;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-a:visited{
-    color: inherit;
+.card {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.card a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+.card h3:last-of-type {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.normal {
+    color: #666;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .card {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        max-width: 80%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+}
