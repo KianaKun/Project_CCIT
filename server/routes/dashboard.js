@@ -124,7 +124,7 @@ router.get('/export', (req, res) => {
         }
 
         const workbook = new excel.Workbook();
-        const worksheet = workbook.addWorksheet('Forms');
+        const worksheet = workbook.addWorksheet('Data Pasien Hari Ini');
 
         worksheet.columns = [
             { header: 'Nama', key: 'name', width: 20 },
