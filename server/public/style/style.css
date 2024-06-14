@@ -27,6 +27,11 @@ body {
     padding: 2em;
 }
 
+.header-container nav{
+    display: flex;
+    align-items: center;
+}
+
 .tag-line {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 2em;
@@ -151,6 +156,7 @@ body {
     .header-container {
         flex-direction: column;
         align-items: center;
+        gap: 20px;
     }
     .menu {
         flex-direction: row;
