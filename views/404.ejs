@@ -7,8 +7,29 @@
     <title>Kesalahan</title>
 </head>
 <body>
+    <audio id="background-music" src="/images/Rick-Rolled.mp3" autoplay loop></audio>
     <h1>Kesalahan 404</h1>
     <p><%= message %></p>
     <a href="/">Kembali ke Halaman Utama</a>
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('background-music');
+            var playPromise = audio.play();
+    
+            if (playPromise !== undefined) {
+                playPromise.then(function() {
+                }).catch(function(error) {
+                    // Autoplay was prevented. Show a play button
+                    var playButton = document.createElement('button');
+                    playButton.innerHTML = 'Play Music';
+                    playButton.onclick = function() {
+                        audio.play();
+                        playButton.style.display = 'none';
+                    };
+                    document.body.appendChild(playButton);
+                });
+            }
+        });
+    </script> -->
 </body>
 </html>

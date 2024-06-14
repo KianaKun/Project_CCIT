@@ -25,7 +25,7 @@ app.use('/auth', auth);
 app.use('/dashboard', requireLogin, dashboard);
 
 app.use((req, res, next) => {
-    res.status(404).render('404', { message: 'Hayo mau ngapain?' });
+    res.status(404).render('404', { message: 'Hayoooo mau ngapain? Kamu mau iseng yaaa??? Sana pergi husshh!!!' });
 });
 
 app.listen(port, () => {

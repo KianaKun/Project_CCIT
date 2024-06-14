@@ -1,0 +1,57 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: url('/images/rickroll-icegif-1.gif') no-repeat center center fixed;
+    background-size: cover;
+    color: #ff69b4;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    font-size: 4em;
+    animation: neon 1.5s infinite alternate;
+    text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 40px #ff69b4;
+}
+
+p {
+    font-size: 2em;
+    animation: wiggle 0.5s infinite;
+}
+
+a {
+    font-size: 1.5em;
+    color: #00ff00;
+    text-decoration: none;
+    border: 2px solid #00ff00;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+a:hover {
+    background-color: #00ff00;
+    color: #ff69b4;
+    transform: scale(1.1);
+}
+
+@keyframes neon {
+    from {
+        text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 40px #ff69b4;
+    }
+    to {
+        text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 50px #ff69b4;
+    }
+}
+
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+}

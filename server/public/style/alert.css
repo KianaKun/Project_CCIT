@@ -1,3 +1,4 @@
+/* CSS dasar */
 body {
     margin: 0;
     padding: 0;
@@ -20,7 +21,7 @@ a {
     text-decoration: none;
 }
 
-.card {
+.card, .additional-info {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
@@ -30,26 +31,26 @@ a {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
+.card:hover, .additional-info {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.card h3 {
+.card h3, .additional-info h3 {
     margin: 10px 0;
     color: #333;
 }
 
-.card a {
+.card a, .additional-info a {
     color: #007bff;
     text-decoration: none;
 }
 
-.card a:hover {
+.card a:hover, .additional-info a:hover {
     text-decoration: underline;
 }
 
-.card h3:last-of-type {
+.card h3:last-of-type, .additional-info h3:last-of-type {
     margin-top: 20px;
     font-size: 14px;
     color: #666;
@@ -64,11 +65,19 @@ a {
     .card {
         max-width: 80%;
     }
+    .additional-info {
+        max-width: 80%;
+    }
 }
 
 @media (max-width: 480px) {
     .card {
         max-width: 80%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+    .additional-info {
+        max-width: 90%;
         margin: 10px auto;
         padding: 15px;
     }
