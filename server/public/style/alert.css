@@ -11,6 +11,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 
 main {

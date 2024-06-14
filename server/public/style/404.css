@@ -9,6 +9,7 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 h1 {
