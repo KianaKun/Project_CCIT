@@ -23,6 +23,19 @@ router.post('/status', (req, res) => {
         return res.render('rejected', { message: 'Mohon pilih meeting date yang valid.' });
     }
 
+    // Validasi: Memastikan birthdate dipilih pada masa lampau
+    const selectedBirthdate = new Date(birthdate);
+    if (selectedBirthdate >= now) {
+        console.error("Tanggal lahir harus sebelum hari ini.");
+        return res.render('rejected', { message: 'Mohon masukkan tanggal lahir yang valid.' });
+    }
+
+    // Validasi: Memastikan nama tidak mengandung angka
+    if (/\d/.test(name)) {
+        console.error("Nama tidak boleh mengandung angka.");
+        return res.render('rejected', { message: 'Nama tidak boleh mengandung angka.' });
+    }
+
     // Jika semua validasi berhasil, lakukan penyimpanan data ke database
     const query = 'INSERT INTO form (name, gender, phone, birthdate, address, email, complain, meetingDate, nama_dokter) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
     connection.query(query, [name, gender, phone, birthdate, address, email, complain, meetingDate, nama_dokter], (err, result) => {

@@ -1,3 +1,4 @@
+/* Reset default margin and padding */
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -6,26 +7,29 @@ body {
     scroll-behavior: smooth;
 }
 
+/* Styling for the header */
 header {
     background-color: #4caf50;
     color: white;
     padding: 1rem 0;
-    position: relative;
     text-align: center;
+    position: relative;
 }
 
+/* Container for header content */
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
-    position: relative;
 }
 
+/* Dashboard title styling */
 .dashboard-title {
     margin: 0;
 }
 
+/* Logout button styling */
 .logout-button {
     background-color: #ff4b5c;
     color: white;
@@ -43,10 +47,12 @@ header {
     background-color: #ff1a33;
 }
 
+/* Main section styling */
 main {
     padding: 2rem;
 }
 
+/* Section styling */
 section {
     background-color: white;
     padding: 2rem;
@@ -54,19 +60,43 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* H3 heading styling */
 h3 {
     margin-top: 0;
 }
 
-.filter-form {
+/* Filter and search container */
+.filter-search-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
     margin-bottom: 1.5rem;
 }
 
-.filter-form label {
-    margin-right: 1rem;
+/* Form styling */
+.filter-form,
+.search-form,
+.export-form {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.filter-button {
+.filter-form label,
+.search-form label {
+    margin-right: 0.5rem;
+}
+
+.filter-form input[type="date"],
+.search-form input[type="text"] {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.filter-button,
+.search-button,
+.export-button {
     background-color: #4caf50;
     color: white;
     border: none;
@@ -75,10 +105,13 @@ h3 {
     border-radius: 5px;
 }
 
-.filter-button:hover {
+.filter-button:hover,
+.search-button:hover,
+.export-button:hover {
     background-color: #45a049;
 }
 
+/* Responsive table */
 .table-respon {
     overflow-x: auto;
 }
@@ -89,11 +122,12 @@ table {
     margin-top: 1rem;
 }
 
-table th, table td {
+table th,
+table td {
     border: 1px solid #ddd;
     padding: 0.75rem;
     text-align: center;
-    vertical-align: middle; /* Ensure vertical alignment */
+    vertical-align: middle;
 }
 
 table th {
@@ -109,8 +143,19 @@ table tr:hover {
     background-color: #ddd;
 }
 
-.update-button,
-.delete-button {
+/* Action buttons in table */
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+}
+
+.actions form {
+    margin: 0;
+}
+
+.actions button {
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -119,11 +164,11 @@ table tr:hover {
     text-decoration: none;
     display: inline-block;
     text-align: center;
-    width: 100px; /* Fixed width */
-    height: 40px; /* Fixed height */
-    line-height: 25px; /* Ensures text is vertically centered */
-    box-sizing: border-box; /* Ensures padding and border are included in the width and height */
-    font-size: 16px; /* Ensures same font size */
+    width: 100px;
+    height: 40px;
+    line-height: 25px;
+    box-sizing: border-box;
+    font-size: 16px;
 }
 
 .update-button {
@@ -142,14 +187,7 @@ table tr:hover {
     background-color: #ff1a33;
 }
 
-.table-respon tbody > tr > .actions {
-    display: flex;
-    flex-direction: column;
-    gap: 5px; /* Adjust the gap as needed */
-    justify-content: center;
-    padding: 35px;
-}
-
+/* Media queries for responsiveness */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: row;
@@ -206,21 +244,27 @@ table tr:hover {
     section {
         padding: 1rem 0.5rem;
     }
-    .filter-form {
+    .filter-form,
+    .search-form,
+    .export-form {
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
     }
-    .filter-form label {
+    .filter-form label,
+    .search-form label {
         margin-right: 0;
         margin-bottom: 0.5rem;
     }
     .filter-form input[type="text"],
-    .filter-form input[type="date"] {
+    .filter-form input[type="date"],
+    .search-form input[type="text"] {
         width: 100%;
         margin-bottom: 0.5rem;
     }
-    .filter-button {
+    .filter-button,
+    .search-button,
+    .export-button {
         width: 100%;
         text-align: center;
     }

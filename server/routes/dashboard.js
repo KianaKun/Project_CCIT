@@ -6,23 +6,26 @@ const excel = require('exceljs');
 // Route untuk menampilkan halaman dashboard dengan filter dan pencarian
 router.get('/', (req, res) => {
     let query = 'SELECT * FROM form';
+    const params = [];
     const { meetingDate, name } = req.query;
     res.setHeader('Cache-Control', 'no-store');
 
     if (meetingDate || name) {
         query += ' WHERE';
         if (meetingDate) {
-            query += ` meetingDate = '${meetingDate}'`;
+            query += ' DATE(meetingDate) = ?';
+            params.push(meetingDate);
         }
         if (meetingDate && name) {
             query += ' AND';
         }
         if (name) {
-            query += ` name LIKE '%${name}%'`;
+            query += ' name LIKE ?';
+            params.push(`%${name}%`);
         }
     }
 
-    connection.query(query, (err, results) => {
+    connection.query(query, params, (err, results) => {
         if (err) {
             console.error(`Error executing query: ${err}`);
             return res.render('dashboard', { error: 'Database error', data: [], meetingDate, name });
@@ -73,6 +76,7 @@ router.post('/update/:idform', (req, res) => {
         WHERE idform = ?
     `;
     const values = [name, gender, phone, birthdate, address, email, complain, meetingDate, nama_dokter, idform];
+
     connection.query(query, values, (err, result) => {
         if (err) {
             console.error(`Error executing query: ${err}`);
@@ -81,7 +85,7 @@ router.post('/update/:idform', (req, res) => {
         if (result.affectedRows === 0) {
             return res.redirect(`/dashboard/update/${idform}?error=No record found`);
         }
-        res.redirect('/dashboard');
+        res.redirect(`/dashboard/update/${idform}`); // Redirect to update.ejs after successful update
     });
 });
 
@@ -93,29 +97,32 @@ router.post('/logout', (req, res) => {
             console.error(`Error executing query: ${err}`);
             return res.render('login', { error: 'Database error' });
         }
-        res.redirect('/login');
+        res.redirect('/');
     });
 });
 
 // Route untuk export data ke Excel
 router.get('/export', (req, res) => {
     let query = 'SELECT * FROM form';
+    const params = [];
     const { meetingDate, name } = req.query;
 
     if (meetingDate || name) {
         query += ' WHERE';
         if (meetingDate) {
-            query += ` meetingDate = '${meetingDate}'`;
+            query += ' DATE(meetingDate) = ?';
+            params.push(meetingDate);
         }
         if (meetingDate && name) {
             query += ' AND';
         }
         if (name) {
-            query += ` name LIKE '%${name}%'`;
+            query += ' name LIKE ?';
+            params.push(`%${name}%`);
         }
     }
 
-    connection.query(query, (err, results) => {
+    connection.query(query, params, (err, results) => {
         if (err) {
             console.error(`Error executing query: ${err}`);
             return res.redirect('/dashboard?error=Database error');

@@ -47,7 +47,14 @@
                 <input type="date" id="meetingDate" name="meetingDate" value="<%= form.meetingDate %>" required>
 
                 <label for="nama_dokter">Nama Dokter:</label>
-                <input type="text" id="nama_dokter" name="nama_dokter" value="<%= form.nama_dokter %>" required>
+                <select id="nama_dokter" name="nama_dokter" required>
+                    <option value="Dr.Budi()">Dr. Budi Paracetamol (Sakit Kepala)</option>
+                    <option value="Dr.Wanto()">Dr. Wanto Goweng (Otak)</option>
+                    <option value="Dr.rangga()">Dr. Rangga Nicotine (Pecandu Zat Adiktif)</option>
+                    <option value="Dr.kurniawan()">Dr. Kurniawan Heru Budi (Jantung)</option>
+                    <option value="Dr.kurniadi()">Dr. Kurniadi Kopling (Lutut Kopong)</option>
+                    <option value="Dr.louis()">Dr. Louis Anomali Siregar (Anatomi)</option>
+                </select>  
 
                 <input type="submit" value="Update" class="update-button">
             </form>
