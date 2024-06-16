@@ -119,11 +119,11 @@ table tr:hover {
     text-decoration: none;
     display: inline-block;
     text-align: center;
-    width: 100px; /* Fixed width */
-    height: 40px; /* Fixed height */
-    line-height: 25px; /* Ensures text is vertically centered */
-    box-sizing: border-box; /* Ensures padding and border are included in the width and height */
-    font-size: 16px; /* Ensures same font size */
+    width: 100px;
+    height: 40px;
+    line-height: 25px;
+    box-sizing: border-box;
+    font-size: 16px;
 }
 
 .update-button {
@@ -145,9 +145,43 @@ table tr:hover {
 .table-respon tbody > tr > .actions {
     display: flex;
     flex-direction: column;
-    gap: 5px; /* Adjust the gap as needed */
+    gap: 5px;
     justify-content: center;
     padding: 35px;
+}
+
+.find-export {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-form .cari-nama {
+    border: 3px solid #f4f4f4;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.search-form .cari-nama:active , .search-form .cari-nama:focus{
+    border: 3px solid #eb1c23;
+    outline: none;
+}
+
+.export-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.search-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 @media (max-width: 768px) {
@@ -182,6 +216,10 @@ table tr:hover {
     }
     .filter-button {
         margin-left: 0;
+    }
+    .right {
+        align-items: center;
+        display: flex;
     }
 }
 

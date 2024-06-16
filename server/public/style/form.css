@@ -73,7 +73,7 @@ main {
     transition: border-color 0.3s;
 }
 
-.appointmentForm input[type="submit"] {
+.kirim {
     padding: 20px 30px; /* Menyesuaikan padding */
     font-size: 18px; /* Mengubah font-size */
 }
@@ -92,7 +92,7 @@ main {
     resize: none; /* Disable resizing */
 }
 
-.appointmentForm input[type="submit"] {
+.kirim {
     padding: 15px;
     background-color: #007bff;
     color: #fff;
@@ -103,7 +103,7 @@ main {
     transition: background-color 0.3s;
 }
 
-.appointmentForm input[type="submit"]:hover {
+.kirim:hover {
     background-color: #0056b3;
 }
 

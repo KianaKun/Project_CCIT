@@ -11,7 +11,7 @@
         <div class="header-container">
             <h2 class="dashboard-title">Dashboard Admin</h2>
             <form action="/dashboard/logout" method="post">
-                <input type="submit" value="Logout" class="logout-button">
+                <button type="submit" value="Logout" class="logout-button"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
             </form>
         </div>
     </header>
@@ -24,18 +24,24 @@
             <form action="/dashboard" method="get" class="filter-form">
                 <label for="meetingDate">Filter berdasarkan Tanggal Pertemuan:</label>
                 <input type="date" id="meetingDate" name="meetingDate" value="<%= meetingDate %>">
-                <input type="submit" value="Filter" class="filter-button">
+                <button type="submit" value="Filter" class="filter-button"><i class="fa-solid fa-filter"></i> Filter</button>
             </form>
-            <form action="/dashboard" method="get" class="search-form">
-                <label for="name">Mencari nama:</label>
-                <input type="text" name="name" id="name" placeholder="Tulis Namamu">
-                <input type="submit" value="Search">
-            </form>
-            <form action="/dashboard/export" method="get" class="export-form">
-                <input type="hidden" name="meetingDate" value="<%= meetingDate %>">
-                <input type="hidden" name="name" value="<%= name %>">
-                <input type="submit" value="Export to Excel" class="export-button">
-            </form>
+            <div class="find-export">
+                <div class="left">
+                    <form action="/dashboard" method="get" class="search-form">
+                        <label for="name">Mencari nama:</label>
+                        <input type="text" name="name" id="name" class="cari-nama" placeholder="Tulis Namamu">
+                        <button type="submit" value="Search" class="search-button"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+                    </form>
+                </div>
+                <div class="right">
+                    <form action="/dashboard/export" method="get" class="export-form">
+                        <input type="hidden" name="meetingDate" value="<%= meetingDate %>">
+                        <input type="hidden" name="name" value="<%= name %>">
+                        <button type="submit" value="Export to Excel" class="export-button"><i class="fa-solid fa-file-export"></i> Export To Excel</button>
+                    </form>
+                </div>
+             </div>
 
             <!-- Tabel untuk menampilkan data form -->
             <div class="table-respon">
@@ -71,7 +77,7 @@
                                 <td class="actions">
                                     <a href="/dashboard/update/<%= form.idform %>" class="update-button">Update</a>
                                     <form action="/dashboard/delete/<%= form.idform %>" method="post" style="display:inline;">
-                                        <button type="submit" class="delete-button">Delete</button>
+                                        <button type="submit" class="delete-button"><i class="fa-solid fa-delete-left"></i></button>
                                     </form>
                                 </td>
                             </tr>
@@ -81,5 +87,6 @@
             </div>
         </section>
     </main>
+    <script src="https://kit.fontawesome.com/3ecc16c3d8.js" crossorigin="anonymous"></script>
 </body>
 </html>
