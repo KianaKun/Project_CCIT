@@ -76,7 +76,6 @@ router.post('/update/:idform', (req, res) => {
         WHERE idform = ?
     `;
     const values = [name, gender, phone, birthdate, address, email, complain, meetingDate, nama_dokter, idform];
-
     connection.query(query, values, (err, result) => {
         if (err) {
             console.error(`Error executing query: ${err}`);
@@ -85,9 +84,10 @@ router.post('/update/:idform', (req, res) => {
         if (result.affectedRows === 0) {
             return res.redirect(`/dashboard/update/${idform}?error=No record found`);
         }
-        res.redirect(`/dashboard/update/${idform}`); // Redirect to update.ejs after successful update
+        res.redirect('/dashboard');
     });
 });
+
 
 // Route untuk logout admin
 router.post('/logout', (req, res) => {

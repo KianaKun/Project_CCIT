@@ -5,56 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="/style/dashboard.css">
-    <script>
-        function confirmDelete(event, form) {
-            event.preventDefault();
-            if (confirm('Are you sure you want to delete this item?')) {
-                form.submit();
-            }
-        }
-    </script>
 </head>
 <body>
     <header>
-<<<<<<< HEAD
-        <h2 class="dashboard-title">Dashboard Admin</h2>
-        <form action="/dashboard/logout" method="post">
-            <input type="submit" value="Logout" class="logout-button">
-        </form>
-=======
         <div class="header-container">
             <h2 class="dashboard-title">Dashboard Admin</h2>
             <form action="/dashboard/logout" method="post">
                 <button type="submit" value="Logout" class="logout-button"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
             </form>
         </div>
->>>>>>> ff4a1aa10716225124296f7fed7881278b17d141
     </header>
 
     <main>
         <section>
             <h3>Data Form</h3>
 
-<<<<<<< HEAD
-            <!-- Form for filter and search -->
-            <div class="filter-search-container">
-                <form action="/dashboard" method="get" class="filter-form">
-                    <label for="meetingDate">Filter by Date:</label>
-                    <input type="date" id="meetingDate" name="meetingDate" value="<%= meetingDate %>">
-                    <input type="submit" value="Filter" class="filter-button">
-                </form>
-                <form action="/dashboard" method="get" class="search-form">
-                    <label for="name">Search by Name:</label>
-                    <input type="text" name="name" id="name" placeholder="Enter Name">
-                    <input type="submit" value="Search" class="search-button">
-                </form>
-                <form action="/dashboard/export" method="get" class="export-form">
-                    <input type="hidden" name="meetingDate" value="<%= meetingDate %>">
-                    <input type="hidden" name="name" value="<%= name %>">
-                    <input type="submit" value="Export to Excel" class="export-button">
-                </form>
-            </div>
-=======
             <!-- Form untuk filter berdasarkan meetingDate -->
             <form action="/dashboard" method="get" class="filter-form">
                 <label for="meetingDate">Filter berdasarkan Tanggal Pertemuan:</label>
@@ -77,9 +42,8 @@
                     </form>
                 </div>
              </div>
->>>>>>> ff4a1aa10716225124296f7fed7881278b17d141
 
-            <!-- Table to display form data -->
+            <!-- Tabel untuk menampilkan data form -->
             <div class="table-respon">
                 <table>
                     <thead>
@@ -111,21 +75,13 @@
                                 <td><%= form.meetingDate %></td>
                                 <td><%= form.nama_dokter %></td>
                                 <td class="actions">
-<<<<<<< HEAD
-                                    <form action="/dashboard/update/<%= form.idform %>?_method=PUT" method="post">
-                                        <button type="submit" class="update-button">Update</button>
-                                    </form>
-                                    <form action="/dashboard/delete/<%= form.idform %>?_method=DELETE" method="post" onsubmit="confirmDelete(event, this)">
-                                        <button type="submit" class="delete-button">Delete</button>
-=======
                                     <a href="/dashboard/update/<%= form.idform %>" class="update-button">Update</a>
                                     <form action="/dashboard/delete/<%= form.idform %>" method="post" style="display:inline;">
                                         <button type="submit" class="delete-button"><i class="fa-solid fa-delete-left"></i></button>
->>>>>>> ff4a1aa10716225124296f7fed7881278b17d141
                                     </form>
                                 </td>
                             </tr>
-                        <% }) %>
+                        <% }); %>
                     </tbody>
                 </table>
             </div>
