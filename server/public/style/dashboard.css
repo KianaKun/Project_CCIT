@@ -187,7 +187,52 @@ table tr:hover {
     background-color: #ff1a33;
 }
 
+<<<<<<< HEAD
 /* Media queries for responsiveness */
+=======
+.table-respon tbody > tr > .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    padding: 35px;
+}
+
+.find-export {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-form .cari-nama {
+    border: 3px solid #f4f4f4;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.search-form .cari-nama:active , .search-form .cari-nama:focus{
+    border: 3px solid #eb1c23;
+    outline: none;
+}
+
+.export-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.search-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+>>>>>>> ff4a1aa10716225124296f7fed7881278b17d141
 @media (max-width: 768px) {
     .header-container {
         flex-direction: row;
@@ -220,6 +265,10 @@ table tr:hover {
     }
     .filter-button {
         margin-left: 0;
+    }
+    .right {
+        align-items: center;
+        display: flex;
     }
 }
 

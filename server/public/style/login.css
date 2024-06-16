@@ -72,14 +72,14 @@ main {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-.loginForm input[type="submit"] {
+.login {
     padding: 0.5em;
     margin-bottom: 1em;
     width: 100%;
     max-width: 300px;
 }
 
-.loginForm input[type="submit"] {
+.login{
     padding: 15px;
     background-color: #007bff;
     color: #fff;

@@ -16,16 +16,26 @@
 </head>
 <body>
     <header>
+<<<<<<< HEAD
         <h2 class="dashboard-title">Dashboard Admin</h2>
         <form action="/dashboard/logout" method="post">
             <input type="submit" value="Logout" class="logout-button">
         </form>
+=======
+        <div class="header-container">
+            <h2 class="dashboard-title">Dashboard Admin</h2>
+            <form action="/dashboard/logout" method="post">
+                <button type="submit" value="Logout" class="logout-button"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+            </form>
+        </div>
+>>>>>>> ff4a1aa10716225124296f7fed7881278b17d141
     </header>
 
     <main>
         <section>
             <h3>Data Form</h3>
 
+<<<<<<< HEAD
             <!-- Form for filter and search -->
             <div class="filter-search-container">
                 <form action="/dashboard" method="get" class="filter-form">
@@ -44,6 +54,30 @@
                     <input type="submit" value="Export to Excel" class="export-button">
                 </form>
             </div>
+=======
+            <!-- Form untuk filter berdasarkan meetingDate -->
+            <form action="/dashboard" method="get" class="filter-form">
+                <label for="meetingDate">Filter berdasarkan Tanggal Pertemuan:</label>
+                <input type="date" id="meetingDate" name="meetingDate" value="<%= meetingDate %>">
+                <button type="submit" value="Filter" class="filter-button"><i class="fa-solid fa-filter"></i> Filter</button>
+            </form>
+            <div class="find-export">
+                <div class="left">
+                    <form action="/dashboard" method="get" class="search-form">
+                        <label for="name">Mencari nama:</label>
+                        <input type="text" name="name" id="name" class="cari-nama" placeholder="Tulis Namamu">
+                        <button type="submit" value="Search" class="search-button"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+                    </form>
+                </div>
+                <div class="right">
+                    <form action="/dashboard/export" method="get" class="export-form">
+                        <input type="hidden" name="meetingDate" value="<%= meetingDate %>">
+                        <input type="hidden" name="name" value="<%= name %>">
+                        <button type="submit" value="Export to Excel" class="export-button"><i class="fa-solid fa-file-export"></i> Export To Excel</button>
+                    </form>
+                </div>
+             </div>
+>>>>>>> ff4a1aa10716225124296f7fed7881278b17d141
 
             <!-- Table to display form data -->
             <div class="table-respon">
@@ -77,11 +111,17 @@
                                 <td><%= form.meetingDate %></td>
                                 <td><%= form.nama_dokter %></td>
                                 <td class="actions">
+<<<<<<< HEAD
                                     <form action="/dashboard/update/<%= form.idform %>?_method=PUT" method="post">
                                         <button type="submit" class="update-button">Update</button>
                                     </form>
                                     <form action="/dashboard/delete/<%= form.idform %>?_method=DELETE" method="post" onsubmit="confirmDelete(event, this)">
                                         <button type="submit" class="delete-button">Delete</button>
+=======
+                                    <a href="/dashboard/update/<%= form.idform %>" class="update-button">Update</a>
+                                    <form action="/dashboard/delete/<%= form.idform %>" method="post" style="display:inline;">
+                                        <button type="submit" class="delete-button"><i class="fa-solid fa-delete-left"></i></button>
+>>>>>>> ff4a1aa10716225124296f7fed7881278b17d141
                                     </form>
                                 </td>
                             </tr>
@@ -91,5 +131,6 @@
             </div>
         </section>
     </main>
+    <script src="https://kit.fontawesome.com/3ecc16c3d8.js" crossorigin="anonymous"></script>
 </body>
 </html>
