@@ -12,8 +12,8 @@ const app = express();
 const port = 3000;
 
 app.set('view engine', 'ejs');
-app.use(express.static(path.join(__dirname, 'public'))); // Pastikan ini ada untuk menyajikan file statis
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public'))); // ini untuk menyajikan file statis
+app.use(bodyParser.urlencoded({ extended: true })); //parser untuk ngolah data json
 
 app.get('/', (req, res) => {
     res.render('index');

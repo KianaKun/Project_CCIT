@@ -6,9 +6,9 @@ const excel = require('exceljs');
 // Route untuk menampilkan halaman dashboard dengan filter dan pencarian
 router.get('/', (req, res) => {
     let query = 'SELECT * FROM form';
-    const params = [];
+    const params = []; //array untuk parameter searchbar
     const { meetingDate, name } = req.query;
-    res.setHeader('Cache-Control', 'no-store');
+    res.setHeader('Cache-Control', 'no-store'); //cache control tidak disimpan agar saat tekan tombol back tidak muncul dashboard.
 
     if (meetingDate || name) {
         query += ' WHERE';
@@ -34,7 +34,7 @@ router.get('/', (req, res) => {
     });
 });
 
-// Route untuk menghapus data berdasarkan ID
+// menghapus data berdasarkan ID
 router.post('/delete/:idform', (req, res) => {
     const { idform } = req.params;
     const query = 'DELETE FROM form WHERE idform = ?';
@@ -50,7 +50,7 @@ router.post('/delete/:idform', (req, res) => {
     });
 });
 
-// Route untuk menampilkan halaman update data berdasarkan ID
+//  menampilkan halaman update data berdasarkan ID
 router.get('/update/:idform', (req, res) => {
     const { idform } = req.params;
     const query = 'SELECT * FROM form WHERE idform = ?';
@@ -66,7 +66,7 @@ router.get('/update/:idform', (req, res) => {
     });
 });
 
-// Route untuk memproses update data berdasarkan ID
+// memproses update data berdasarkan ID
 router.post('/update/:idform', (req, res) => {
     const { idform } = req.params;
     const { name, gender, phone, birthdate, address, email, complain, meetingDate, nama_dokter } = req.body;
@@ -89,7 +89,7 @@ router.post('/update/:idform', (req, res) => {
 });
 
 
-// Route untuk logout admin
+// logout admin
 router.post('/logout', (req, res) => {
     const query = 'UPDATE admins SET statusLogin = 0 WHERE statusLogin = 1';
     connection.query(query, (err) => {
@@ -101,7 +101,7 @@ router.post('/logout', (req, res) => {
     });
 });
 
-// Route untuk export data ke Excel
+// export data ke Excel
 router.get('/export', (req, res) => {
     let query = 'SELECT * FROM form';
     const params = [];
@@ -148,7 +148,7 @@ router.get('/export', (req, res) => {
         res.setHeader(
             'Content-Type',
             'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-        );
+        ); 
         res.setHeader(
             'Content-Disposition',
             'attachment; filename="Data Pasien Hari Ini.xlsx"'
