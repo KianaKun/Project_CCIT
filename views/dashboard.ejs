@@ -19,8 +19,6 @@
     <main>
         <section>
             <h3>Data Form</h3>
-
-            <!-- Form untuk filter berdasarkan meetingDate -->
             <form action="/dashboard" method="get" class="filter-form">
                 <label for="meetingDate">Filter berdasarkan Tanggal Pertemuan:</label>
                 <input type="date" id="meetingDate" name="meetingDate" value="<%= meetingDate %>">
@@ -76,7 +74,7 @@
                                 <td><%= form.nama_dokter %></td>
                                 <td class="actions">
                                     <a href="/dashboard/update/<%= form.idform %>" class="update-button">Update</a>
-                                    <form action="/dashboard/delete/<%= form.idform %>" method="post" style="display:inline;">
+                                    <form action="/dashboard/delete/<%= form.idform %>" method="post" style="display:inline;" onsubmit="return confirmDelete()">
                                         <button type="submit" class="delete-button"><i class="fa-solid fa-delete-left"></i></button>
                                     </form>
                                 </td>
@@ -88,5 +86,10 @@
         </section>
     </main>
     <script src="https://kit.fontawesome.com/3ecc16c3d8.js" crossorigin="anonymous"></script>
+    <script>
+        function confirmDelete() {
+            return confirm('Apakah Anda yakin ingin menghapus data ini?');
+        }
+    </script>
 </body>
 </html>
