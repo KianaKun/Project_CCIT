@@ -161,6 +161,20 @@ body {
     color: #2e8b57;
 }
 
+.map {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 50%;
+    padding: 1em;
+}
+
+.map iframe {
+    width: 50%;
+    height: 300px;
+    border: 0;
+}
+
 @media screen and (max-width: 768px) {
     .header {
         padding: 0.5em 0;
@@ -205,6 +219,9 @@ body {
     }
     .facility {
         padding: 15px;
+    }
+    .map iframe {
+        height: 250px;
     }
 }
 
@@ -251,5 +268,8 @@ body {
     }
     .facility {
         padding: 10px;
+    }
+    .map iframe {
+        height: 200px;
     }
 }
