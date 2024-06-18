@@ -2,13 +2,14 @@ const express = require('express');
 const router = express.Router();
 const connection = require('../utils/database');
 const excel = require('exceljs');
+const validasiData = require('../utils/condition');
 
 // Route untuk menampilkan halaman dashboard dengan filter dan pencarian
 router.get('/', (req, res) => {
     let query = 'SELECT * FROM form';
-    const params = []; //array untuk parameter searchbar
+    const params = [];
     const { meetingDate, name } = req.query;
-    res.setHeader('Cache-Control', 'no-store'); //cache control tidak disimpan agar saat tekan tombol back tidak muncul dashboard.
+    res.setHeader('Cache-Control', 'no-store');
 
     if (meetingDate || name) {
         query += ' WHERE';
@@ -69,13 +70,20 @@ router.get('/update/:idform', (req, res) => {
 // memproses update data berdasarkan ID
 router.post('/update/:idform', (req, res) => {
     const { idform } = req.params;
-    const { name, gender, phone, birthdate, address, email, complain, meetingDate, nama_dokter } = req.body;
+    const formData = req.body;
+    const validation = validasiData(formData);
+
+    if (!validation.valid) {
+        console.error(validation.message);
+        return res.redirect(`/dashboard/update/${idform}?error=${validation.message}`);
+    }
+
     const query = `
         UPDATE form 
         SET name = ?, gender = ?, phone = ?, birthdate = ?, address = ?, email = ?, complain = ?, meetingDate = ?, nama_dokter = ? 
         WHERE idform = ?
     `;
-    const values = [name, gender, phone, birthdate, address, email, complain, meetingDate, nama_dokter, idform];
+    const values = [formData.name, formData.gender, formData.phone, formData.birthdate, formData.address, formData.email, formData.complain, formData.meetingDate, formData.nama_dokter, idform];
     connection.query(query, values, (err, result) => {
         if (err) {
             console.error(`Error executing query: ${err}`);
@@ -87,7 +95,6 @@ router.post('/update/:idform', (req, res) => {
         res.redirect('/dashboard');
     });
 });
-
 
 // logout admin
 router.post('/logout', (req, res) => {
