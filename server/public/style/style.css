@@ -165,7 +165,7 @@ body {
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    max-width: 50%;
+    max-width: 65%;
     padding: 1em;
 }
 
@@ -222,6 +222,7 @@ body {
     }
     .map iframe {
         height: 250px;
+        width: 300px;
     }
 }
 
@@ -271,5 +272,6 @@ body {
     }
     .map iframe {
         height: 200px;
+        width: 275px;
     }
 }
